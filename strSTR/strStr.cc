@@ -1,27 +1,28 @@
 #include <iostream>
-int strStr(string source, string target) {
-  if (!source || !target) {
+#include <string>
+int strStr(std::string source, std::string target) {
+  if (source == "" || target == "") {
     return -1;
   }
-  int temp = 0;
   for (int i = 0; i < source.length(); i++) {
-    if (source[i] == target[0]) {
-      for (int j = i, k = 1; j < i + target.length(), k < target.length(); j++) {
-        if (source[j] == target[k]) {
-          continue;
+    if (source[i] != target[0]) {
+       continue;
+    } else {
+      for (int j = 0; j < target.length(); j++) {
+        if (source[i+j] != target[j]) {
+          break;
         }
-        else {
-          return -1
+        if (j == target.length() - 1) {
+          return i;
         }
       }
     }
-    return -1;
-    return i;
   }
+  return -1;
 }
 int main() {
-  string source("str");
-  string target("t");
+  std::string source("mississippi");
+  std::string target("sippi");
   std::cout << strStr(source, target) << std::endl;
 
 }
