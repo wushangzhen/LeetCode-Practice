@@ -1,6 +1,7 @@
 #include <iostream>
-string addBinary(string a, string b) {
-  string s = "";
+#include <string>
+std::string addBinary(std::string a, std::string b) {
+  std::string s = "";
   
   int c = 0, i = a.size() - 1, j = b.size() - 1;
   while(i >= 0 || j >= 0 || c == 1)
@@ -14,33 +15,42 @@ string addBinary(string a, string b) {
   return s;
 }
 
-string addBinary2(string a, string b) {
-  string s = "";
+std::string addBinary2(std::string a, std::string b) {
+  std::string s = "";
 
   int i = a.length();
   int j = b.length();
-  int temp = 0;
-  temp = i > j ? j : i;
-  temp--;
+  while (j < i) {
+    b.insert(b.begin(), '0');
+    j++;
+  }
+  while (j > i) {
+    a.insert(a.begin(), '0');
+    i++;
+  }
+  int temp = i - 1;
+  int tep = 0;
   int c = 0;
-  int tep;
   while (temp != -1) {
-    if (b[temp])
-    tep = std::stoi(a[temp]) + std::stoi(b[temp]) + c;
+    tep = (a[temp] - '0') + (b[temp] - '0') + c;
     if (tep > 1) {
-      c == 1 
+      c = 1; 
       tep = tep % 2;
     } else {
-      c == 0;
+      c = 0;
     }
-    s.insert(s.bigin(), tep.to_string());
+    s.insert(s.begin(), char(tep));
+    if (temp == 0 && c == 1) {
+      s.insert(s.begin(), '1');
+    }
+
     temp--;
   }
-  if (c == 0 && i > j) {
-    for (temp = i - j - 1; temp != 0; temp--) {
-    
-    }
-    s.insert(s.bigin(), tep.to_string());
-    
-  }
+  return s;
+}
+
+int main() {
+  std::string str1 = "1010";
+  std::string str2 = "1011";
+  std::cout << addBinary2(str1, str2) << std::endl;
 }
