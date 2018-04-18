@@ -39,18 +39,17 @@ std::string addBinary2(std::string a, std::string b) {
     } else {
       c = 0;
     }
-    s.insert(s.begin(), char(tep));
+    s.insert(s.begin(), char(tep + '0'));
     if (temp == 0 && c == 1) {
       s.insert(s.begin(), '1');
     }
-
     temp--;
   }
   return s;
 }
 
 int main() {
-  std::string str1 = "1010";
-  std::string str2 = "1011";
+  std::string str1 = "11";
+  std::string str2 = "";
   std::cout << addBinary2(str1, str2) << std::endl;
 }
