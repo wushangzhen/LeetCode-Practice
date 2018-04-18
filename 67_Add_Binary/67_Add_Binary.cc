@@ -13,3 +13,34 @@ string addBinary(string a, string b) {
   
   return s;
 }
+
+string addBinary2(string a, string b) {
+  string s = "";
+
+  int i = a.length();
+  int j = b.length();
+  int temp = 0;
+  temp = i > j ? j : i;
+  temp--;
+  int c = 0;
+  int tep;
+  while (temp != -1) {
+    if (b[temp])
+    tep = std::stoi(a[temp]) + std::stoi(b[temp]) + c;
+    if (tep > 1) {
+      c == 1 
+      tep = tep % 2;
+    } else {
+      c == 0;
+    }
+    s.insert(s.bigin(), tep.to_string());
+    temp--;
+  }
+  if (c == 0 && i > j) {
+    for (temp = i - j - 1; temp != 0; temp--) {
+    
+    }
+    s.insert(s.bigin(), tep.to_string());
+    
+  }
+}
