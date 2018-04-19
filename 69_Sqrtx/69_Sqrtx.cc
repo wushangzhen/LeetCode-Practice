@@ -1,3 +1,4 @@
+#include <iostream>
 class Solution {
 public:
     int mySqrt(int x) {
@@ -11,3 +12,27 @@ public:
       }
     }
 };
+
+
+int mySqrt2(int x) {
+  long long a = 0;
+  long long b = x / 2 + 1;
+  long long mid = (a + b) / 2;
+  while (a <= b) {
+    if (mid * mid > x) {
+      b = mid - 1;
+      mid = (a + b) / 2;
+    } else if (mid * mid == x) {
+      return mid;
+    } else {
+      a = mid + 1;
+      mid = (a + b) / 2;
+    }
+  }
+  return b;
+}
+
+int main() {
+  int n = 5;
+  std::cout << mySqrt2(n) << std::endl;
+}
