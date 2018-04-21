@@ -12,7 +12,7 @@ bool hasCycle(ListNode *head) {
   } 
   ListNode* runner = head;
   ListNode* walker = head;
-  while (runner->next->next != NULL && runner->next != NULL) {
+  while (runner->next != NULL && runner->next->next != NULL) {
     runner = runner->next->next;
     walker = walker->next;
     if (runner == walker) {
