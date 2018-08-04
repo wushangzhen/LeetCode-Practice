@@ -30,7 +30,7 @@ public:
         int value = 0;
         for (int i = 0; i < n; ++i) {
             if (i >= m) {
-                value = (value - m26 * (source[i - m] - 'a')) % mod;
+                value = value - (m26 * (source[i - m] - 'a')) % mod;
             }
             value = (value * 26 + source[i] - 'a') % mod;
             if (value < 0) {
