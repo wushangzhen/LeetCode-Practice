@@ -34,6 +34,5 @@ class Solution {
         helper(root.left, map, sum, curSum);
         helper(root.right, map, sum, curSum);
         map.put(curSum, map.get(curSum) - 1);
-        
     } 
 }
