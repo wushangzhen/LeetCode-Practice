@@ -38,7 +38,7 @@ public class Solution {
     boolean isAllStar(int index, String p) {
         for (int i = index + 1; i < p.length(); i++) {
             if (p.charAt(i) != '*') {
-                return false;
+                return false; // wrong answer
             }
         }
         return true;
