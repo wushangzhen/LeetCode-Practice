@@ -7,38 +7,36 @@
  * }
  */
 class Solution {
-    public ListNode swapPairs(ListNode head) {
+    public ListNode reverseKGroup(ListNode head, int k) {
         if (head == null) {
             return null;
         }
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
-        int k = 2;
-        int i = 0;
         ListNode cur = head;
-        ListNode pre = dummy;
-        // 1->2->3->4->null
-        // 2->1->3->4->null
+        ListNode prev = dummy;
+        int count = 0;
         while (cur != null) {
-            i++;
-            if (i % k == 0) {
-                pre = swapOnePair(pre, cur.next);
-                cur = pre.next;
+            count++;
+            if (count % k == 0) {
+                prev = swapOnePair(prev, cur.next);
+                cur = prev.next;
             } else {
                 cur = cur.next;
             }
+            
         }
-        return dummy.next; 
+        return dummy.next;
     }
-    ListNode swapOnePair(ListNode pre, ListNode post) {
-        ListNode start = pre.next;
+    ListNode swapOnePair(ListNode prev, ListNode post) {
+        ListNode start = prev.next;
         ListNode cur = start.next;
         while (start.next != post) {
-            ListNode temp = pre.next;
-            pre.next = cur;
+            ListNode temp = prev.next;
+            prev.next = cur;
             start.next = cur.next;
             cur.next = temp;
-            cur = cur.next;
+            cur = start.next;
         }
         return start;
     }
