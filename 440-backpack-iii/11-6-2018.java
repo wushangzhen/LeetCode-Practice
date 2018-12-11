@@ -12,7 +12,6 @@ public class Solution {
         dp[0] = 0; 
         for (int i = 0; i < n; i++) {
             int size = A[i];
-            int value = V[i];
             for (int j = size; j <= m; j++) {
                 dp[j] = Math.max(dp[j], dp[j - A[i]] + V[i]);
             }
