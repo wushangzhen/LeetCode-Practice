@@ -31,7 +31,7 @@ public class Solution {
             }
             // abcd - a
             if (i >= m) {
-                hashCode = hashCode - (source.charAt(i - m) * power ) % BASE;
+                hashCode = hashCode - (source.charAt(i - m) * power) % BASE;
                 if (hashCode < 0) {
                     hashCode += BASE;
                 }
