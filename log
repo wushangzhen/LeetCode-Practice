@@ -1,0 +1,13 @@
+/*
+* Function to chop a string in half.
+*/
+public static$5$3(string input) {
+   if (input == null ||$11.isEmpty()) {
+       return$11;
+    }
+   $12 $13.length() % 2 == 1) {
+      $16 "cannot$3 an odd-length$5$6$7";
+    }
+   $16$11.substring$13$17() / 2);
+}
+
