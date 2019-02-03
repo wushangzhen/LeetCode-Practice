@@ -11,8 +11,7 @@ int maximalRectangle(vector<vector<char> > &matrix) {
             }
             else{
                 height[j]++;
-            }
-        }
+            } }
         maxRec = max(maxRec, largestRectangleArea(height));
     }
     return maxRec;
