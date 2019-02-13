@@ -1,9 +1,9 @@
 #include <stdio.h>
+float f;
+float f2(float a) {
+    f = a * a;
+    return f;
+}
 int main() {
-    int a[] = {1, 2, 3};
-    int* p = a;
-    int* q = p;
-    p++;
-    printf("%ld\n", p);
-    printf("%ld\n", q);
+    printf("%f", f2(5.0));
 }
