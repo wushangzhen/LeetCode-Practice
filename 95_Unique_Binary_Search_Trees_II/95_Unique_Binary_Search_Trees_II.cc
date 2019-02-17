@@ -35,6 +35,5 @@ public:
       }
     }
     return result_vec;
-    
   }
 };
