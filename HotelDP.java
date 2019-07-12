@@ -5,14 +5,14 @@ class HotelDP {
         Arrays.fill(dp, Integer.MAX_VALUE);
         dp[0] = 0;
         for (int i = 1; i <= n; i++) {
-            for (int j = i - 1; hotels[i] - hotels[j] <= 200 && j >= 1; j--) {
+            for (int j = i - 1; hotels[i - 1] - hotels[j - 1] <= 200 && j >= 1; j--) {
                dp[i] = Math.min(dp[i], dp[j] + cost(hotels[i - 1] - hotels[j - 1]));
             }
         }
         return dp[n];
     }
     public int cost(int x) {
+        // not sure if this cost is right. you have to check with TA
         return (200 - x) ^ 2;
     }
-        
 }
